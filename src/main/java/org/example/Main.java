@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /*
 import java.util.Scanner;
 
@@ -50,6 +53,7 @@ public class Main {
     }
 }
 */
+/*
 import java.util.Scanner;
 
 public class Main {
@@ -95,4 +99,38 @@ public class Main {
                 scanner.close();
             }
         }
+*/
+public class Main {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        int puntosJ1 = 0, puntosJ2 = 0;
+
+        while (puntosJ1 < 2 && puntosJ2 < 2) {
+            int partida1 = random.nextInt(3) + 1;
+            int partida2 = random.nextInt(3) + 1;
+
+            String contrincante1 = (partida1 == 1) ? "Piedra" : (partida1 == 2) ? "Papel" : "Tijera";
+            String contrincante2 = (partida2 == 1) ? "Piedra" : (partida2 == 2) ? "Papel" : "Tijera";
+
+            System.out.println("Contrincante 1: " + contrincante1);
+            System.out.println("Contrincante 2: " + contrincante2);
+
+            if ((partida1 == 1 && partida2 == 3) || (partida1 == 2 && partida2 == 1) || (partida1 == 3 && partida2 == 2)) {
+                puntosJ1++;
+                System.out.println("Contrincante 1 gana esta ronda.");
+            } else if ((partida2 == 1 && partida1 == 3) || (partida2 == 2 && partida1 == 1) || (partida2 == 3 && partida1 == 2)) {
+                puntosJ2++;
+                System.out.println("Contrincante 2 gana esta ronda.");
+            } else {
+                System.out.println("Empate.");
+            }
+
+            System.out.println("Marcador -> Contrincante 1: " + puntosJ1 + " | Contrincante 2: " + puntosJ2);
+            System.out.println("-------------------------");
+        }
+
+        System.out.println((puntosJ1 == 2) ? "¡Contrincante 1 gana el juego!" : "¡Contrincante 2 gana el juego!");
+    }
+}
 
