@@ -127,7 +127,6 @@ public class Main {
             }
 
             System.out.println("Marcador -> Contrincante 1: " + puntosJ1 + " | Contrincante 2: " + puntosJ2);
-            System.out.println("-------------------------");
         }
 
         System.out.println((puntosJ1 == 2) ? "¡Contrincante 1 gana el juego!" : "¡Contrincante 2 gana el juego!");
